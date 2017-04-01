@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./angular.js"></script>
+</head>
+<body ng-app>
+    <ul>
+        <li><div ng-click="show1=!show1">菜单</div>
+            <ul ng-show="show1">
+                <li>菜单1</li>
+                <li>菜单1</li>
+                <li>菜单1</li>
+            </ul>
+        </li>
+
+        <li><div ng-click="show2=!show2">菜单</div>
+            <ul ng-hide="show2">
+                <li>菜单2</li>
+                <li>菜单2</li>
+                <li>菜单2</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

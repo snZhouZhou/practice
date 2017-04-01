@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 300px;
+            border: 1px solid red;
+        }
+        .color{
+            background-color: blue;
+        }
+    </style>
+    <script src="./angular.js"></script>
+</head>
+<body ng-app>
+    <div ng-mouseover="color='color'" ng-mouseleave="color=''" class="{{ color }}"></div>
+</body>
+</html> 

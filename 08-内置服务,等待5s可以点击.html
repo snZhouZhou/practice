@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./angular.js"></script>
+</head>
+<body ng-app="app" ng-controller="myCon">
+    <input type="button" value="{{value}}" ng-disabled="no">
+</body>
+<script>
+    angular.module('app',[])
+        .controller('myCon',['$scope','$interval',function($scope,$interval){
+            $scope.no=true;
+            $scope.second=5;
+            $scope.value="请等带"+$scope.second+"秒";
+            var promise=$interval(function(){
+                $scope.second--;
+                $scope.value="请等带"+$scope.second+"秒";
+                if($scope.second==0){
+                    $scope.no=false;
+                     $scope.value="click";
+                    $interval.cancel(promise);
+                }
+               
+            },1000)
+        }])
+</script>
+</html>

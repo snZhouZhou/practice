@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+     .ng-cloak {
+            display: none;
+        }
+        #container {
+            width: 300px;
+            border: 1px dashed red;
+        }
+        .float {
+            float: left;
+        }
+    </style>
+    <script src="./angular.js"></script>
+</head>
+<body ng-app="app" ng-controller="myCon">
+    <div id="container" class='ng-cloak'></div>
+    
+</body>
+<script>
+    var container=document.getElementById('container');
+    angular.module('app',[])
+        .controller('myCon',['$scope',function($scope){
+            for(var i=0;i<100;i++){
+                for(var j=0;j<100;j++){
+                     var div=document.createElement('div');
+                            div.style.width="1px";
+                            div.style.height="1px";
+                            div.style.backgroundColor="red";
+                            div.className="float";
+                            container.appendChild(div);
+                }
+            }
+           
+        }])
+        container.appendChild(document.createElement('div'));
+</script>
+</html>
