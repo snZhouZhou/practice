@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-html,直接渲染html字符串</title>
+</head>
+<body>
+<div id="app">
+  <div>{{msg}}</div>
+  <div>{{msg2}}</div>
+  <div v-html="msg2"></div>
+</div>
+</body>
+</html>
+ <!-- 1.引包 -->
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    // 2.new Vue()
+    var vm  = new Vue({
+      el: '#app',
+      data:{
+        msg: '我是中国人，我爱自己的祖国!',
+        msg2: '<h1>我是中国人，我爱自己的祖国!</h1>'
+      }
+    })
+
+  // vue实现了数据绑定，当我们改data中的数据时，vue会自动帮我们把数据更新到dom中
+  vm.msg='我是小明，我也爱中国!'
+  </script>
